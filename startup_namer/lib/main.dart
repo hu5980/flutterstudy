@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return new MaterialApp(
-      title: 'Startup Name Generator',
       theme: new ThemeData(
         primaryColor: Colors.white
       ),
@@ -46,7 +45,6 @@ class RandomWordsState extends State<RandomWords> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-
     return new Scaffold (
       appBar: new AppBar(
         title: new Text('Startup Name Generator'),
@@ -66,7 +64,7 @@ class RandomWordsState extends State<RandomWords> {
 
   //方法构建显示建议单词对的ListView
   _buildSuggestions() {
-    return new ListView.builder(padding: const EdgeInsets.all(16.0),
+    return new ListView.builder(padding: const EdgeInsets.all(0.0),
       // 对于每个建议的单词对都会调用一次itemBuilder，然后将单词对添加到ListTile行中
       // 在偶数行，该函数会为单词对添加一个ListTile row.
       // 在奇数行，该函数会添加一个分割线widget，来分隔相邻的词对。
@@ -129,9 +127,7 @@ class RandomWordsState extends State<RandomWords> {
               .divideTiles(
             context: context,
             tiles: tiles,
-          )
-              .toList();
-
+          ).toList();
           return new Scaffold(
             appBar: new AppBar(
               title: new Text('saved Suggestions'),
